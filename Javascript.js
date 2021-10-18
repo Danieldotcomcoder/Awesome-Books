@@ -1,4 +1,5 @@
 const bookarray = [];
+
 function Add() {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
@@ -21,6 +22,7 @@ function Add() {
  <button type="button" class="remove-btn" >Remove</button>`;
 
   list.appendChild(row);
+
 }
 
 function Display() {
@@ -30,34 +32,39 @@ function Display() {
   for (let i in storedarray) {
     const row = document.createElement("li");
     row.innerHTML = ` 
-   <h2>${storedarray[i].title}</h2>
-   <h2>${storedarray[i].author}</h2>
-   <button type="button" class="remove-btn">Remove</button>`;
+     <h2>${storedarray[i].title}</h2>
+     <h2>${storedarray[i].author}</h2>
+     <button type="button" class="remove-btn">Remove</button>`;
 
     list.appendChild(row);
   }
-  
 }
 
 Display();
 
-
 function Remove() {
+  const storedarray = JSON.parse(localStorage.getItem("bookarray"));
   const list = document.querySelector(".book-list");
   const lists = list.querySelectorAll("li");
-  const removebtn = list.querySelectorAll("button");
+  const removebtn = list.querySelectorAll(".remove-btn");
 
-  removebtn.forEach(  function (_button,i) { 
-    
-    removebtn[i].addEventListener("click", (e) =>  {
-         list.removeChild(lists[i]),
-         console.log("hello")
-    })});
+  removebtn.forEach(function (_button, i) {
+    removebtn[i].addEventListener("click", (e) => {
+      list.removeChild(lists[i]);
+      storedarray.splice(i, 1);
+
+      const arraystringfy = JSON.stringify(storedarray);
+      localStorage.setItem("bookarray", arraystringfy);
+      console.log(storedarray);
+      location.reload();
+    });
+  });
 }
 
 
+const addbtn = document.getElementById("add");
+addbtn.addEventListener("click", (e) => {
+  
+  Add();
+});
 Remove();
-
-
-
-

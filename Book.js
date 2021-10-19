@@ -24,7 +24,7 @@ class Book {
   static removeBook(key) {
     const books = Book.getBooksFromStorage();
     books.forEach((book, i) => {
-      let key1 = parseInt(key);
+      const key1 = parseInt(key,10);
       if (key1 === book.key) {
         books.splice(i, 1);
       }

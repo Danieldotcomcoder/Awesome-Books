@@ -9,10 +9,10 @@ class Book {
 class Store {
   static getBooksFromStorage() {
     let books;
-    if (localStorage.getItem("books") === null) {
+    if (localStorage.getItem('books') === null) {
       books = [];
     } else {
-      books = JSON.parse(localStorage.getItem("books"));
+      books = JSON.parse(localStorage.getItem('books'));
     }
 
     return books;
@@ -21,7 +21,7 @@ class Store {
   static addBookToStorage(book) {
     const books = Store.getBooksFromStorage();
     books.push(book);
-    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem('books', JSON.stringify(books));
   }
 
   static removeBook(key) {
@@ -32,7 +32,7 @@ class Store {
       }
     });
 
-    localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem('books', JSON.stringify(books));
   }
 }
 
@@ -44,32 +44,32 @@ class Display {
   }
 
   static addBookToDisplay(book) {
-    const list = document.querySelector(".book-list");
+    const list = document.querySelector('.book-list');
 
-    const row = document.createElement("tr");
+    const row = document.createElement('tr');
 
     row.innerHTML = `
       <h2>${book.title}</h2>
       <h2>${book.author}</h2>
       <h2 hidden>${book.key}</h2>
-      <h2><button class="btn btn-sm delete" id="button">Remove</button></h2>
+      <h2><button class='btn btn-sm delete' id='button'>Remove</button></h2>
     `;
 
     list.appendChild(row);
   }
 
   static deleteBookFromDisplay(el) {
-    if (el.classList.contains("delete")) {
+    if (el.classList.contains('delete')) {
       el.parentElement.parentElement.remove();
     }
   }
 }
 
-document.addEventListener("DOMContentLoaded", Display.displayBooks);
+document.addEventListener('DOMContentLoaded', Display.displayBooks);
 
-document.querySelector("#book-form").addEventListener("submit", () => {
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
+document.querySelector('#book-form').addEventListener('submit', () => {
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
   const key = Math.floor(Math.random() * 100000000);
 
   const book = new Book(title, author, key);
@@ -78,7 +78,7 @@ document.querySelector("#book-form").addEventListener("submit", () => {
   Store.addBookToStorage(book);
 });
 
-document.querySelector(".book-list").addEventListener("click", (e) => {
+document.querySelector('.book-list').addEventListener('click', (e) => {
   Display.deleteBookFromDisplay(e.target);
   Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });

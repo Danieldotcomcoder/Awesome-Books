@@ -65,9 +65,10 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const key = Math.floor(Math.random() * 100000000);
+  const msg = document.getElementById('error-msg');
 
   if (title === '' || author === '') {
-    window.alert('Please fill in Both fields');
+    msg.innerHTML = 'Please Fill in Both fields' ;
   } else {
     const book = new Book(title, author, key);
 

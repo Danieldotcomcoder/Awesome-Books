@@ -27,7 +27,7 @@ class Store {
   static removeBook(key) {
     const books = Store.getBooksFromStorage();
     books.forEach((book, i) => {
-      if (book.key === key) {
+      if (book.key == key) {
         books.splice(i, 1);
       }
     });

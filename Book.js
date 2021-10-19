@@ -24,7 +24,7 @@ class Book {
   static removeBook(key) {
     const books = Book.getBooksFromStorage();
     books.forEach((book, i) => {
-      const key1 = parseInt(key,10);
+      const key1 = parseInt(key, 10);
       if (key1 === book.key) {
         books.splice(i, 1);
       }
@@ -68,7 +68,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   const msg = document.getElementById('error-msg');
 
   if (title === '' || author === '') {
-    msg.innerHTML = 'Please Fill in Both fields' ;
+    msg.innerHTML = 'Please Fill in Both fields';
   } else {
     const book = new Book(title, author, key);
 

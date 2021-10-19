@@ -6,7 +6,6 @@ class Book {
   }
 }
 
-
 class Store {
   static getBooksFromStorage() {
     let books;
@@ -28,8 +27,7 @@ class Store {
   static removeBook(key) {
     const books = Store.getBooksFromStorage();
     books.forEach((book, i) => {
-      console.log(book);
-
+      
       if (book.key === key) {
         books.splice(i, 1);
       }

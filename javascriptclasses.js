@@ -6,6 +6,39 @@ class Book {
   }
 }
 
+
+class Store {
+  static getBooksFromStorage() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+
+    return books;
+  }
+
+  static addBookToStorage(book) {
+    const books = Store.getBooksFromStorage();
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static removeBook(key) {
+    const books = Store.getBooksFromStorage();
+    books.forEach((book, i) => {
+      console.log(book);
+
+      if (book.key === key) {
+        books.splice(i, 1);
+      }
+    });
+
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+}
+
 class Display {
   static displayBooks() {
     const books = Store.getBooksFromStorage();
@@ -35,40 +68,9 @@ class Display {
   }
 }
 
-class Store {
-  static getBooksFromStorage() {
-    let books;
-    if (localStorage.getItem('books') === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books'));
-    }
-
-    return books;
-  }
-
-  static addBookToStorage(book) {
-    const books = Store.getBooksFromStorage();
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-
-  static removeBook(key) {
-    const books = Store.getBooksFromStorage();
-    books.forEach((book, i) => {
-      console.log(book);
-
-      if (book.key == key) {
-        books.splice(i, 1);
-      }
-    });
-
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-}
 document.addEventListener('DOMContentLoaded', Display.displayBooks);
 
-document.querySelector('#book-form').addEventListener("submit", (e) => {
+document.querySelector('#book-form').addEventListener('submit', () => {
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const key = Math.floor(Math.random() * 100000000);
@@ -79,7 +81,7 @@ document.querySelector('#book-form').addEventListener("submit", (e) => {
   Store.addBookToStorage(book);
 });
 
-document.querySelector('.book-list').addEventListener("click", (e) => {
+document.querySelector('.book-list').addEventListener('click', (e) => {
   Display.deleteBookFromDisplay(e.target);
   Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });

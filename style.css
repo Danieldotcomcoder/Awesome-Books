@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');* {
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+
+* {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -6,7 +8,7 @@
 }
 
 body {
-  background-image: linear-gradient(to right, rgb(131, 209, 235) , rgb(197, 195, 195)) ;
+  background-image: linear-gradient(to right, rgb(131, 209, 235), rgb(197, 195, 195));
 }
 
 #main-h1 {

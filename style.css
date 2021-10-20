@@ -1,5 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-family: 'Bitter', serif;
+}
+
+body {
+  background-image: linear-gradient(to right, rgb(131, 209, 235), rgb(197, 195, 195));
+}
+
+#main-h1 {
+  margin-left: 37%;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  border: 2px solid rgb(54, 54, 201);
+  margin-left: 0.5%;
+}
+
+.book-list tr {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(160, 212, 229);
+  margin-top: 0%;
+  font-size: 2vh;
+  align-content: center;
+  width: 100%;
+}
+
+.book-list tr h2 {
+  font-size: 3.5vh;
+}
+
+.book-list tr:nth-child(2n+1) {
+  background-color: rgb(106, 191, 245);
+}
+
+.book-list tr button {
+  position: absolute;
+  right: 2%;
+  border: 1px solid lightseagreen;
+  box-shadow: 3px 3px 3px seagreen;
+  width: 65px;
+  margin-top: 3px;
+}
+
+#book-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%;
+  margin-left: 35%;
+  width: 25%;
+  height: 180px;
+  justify-content: space-between;
+}
+
+#book-form h2 {
+  margin-left: 20%;
+}
+
+#book-form hr {
+  border: 1px solid cornflowerblue;
+}
+
+#title {
+  width: 99%;
+  height: 25px;
+  border: 2px solid springgreen;
+  box-shadow: 3px 3px 3px rgb(141, 252, 141);
+}
+
+#author {
+  width: 99%;
+  height: 25px;
+  border: 2px solid springgreen;
+  box-shadow: 3px 3px 3px rgb(141, 252, 141);
+}
+
+#add {
+  position: relative;
+  width: 45px;
+  height: 20px;
+  margin-left: 87%;
+  border: 1px solid lightseagreen;
+  box-shadow: 3px 3px 3px seagreen;
+}
+
+#error-msg {
+  display: flex;
+  width: 18%;
+  margin-left: 35%;
 }

@@ -41,9 +41,8 @@ class Book {
     const list = document.querySelector('.book-list');
     const row = document.createElement('tr');
     row.innerHTML = `
-      <h2>${book.title}</h2>
-      <h2>${book.author}</h2>
-      <h2 hidden>${book.key}</h2>
+      <h2>"${book.title}" &nbsp by  &nbsp ${book.author}</h2>
+      <h4 hidden>${book.key}</h4>
       <h2><button class='btn btn-sm delete' id='button'>Remove</button></h2>
     `;
 
@@ -68,7 +67,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   const msg = document.getElementById('error-msg');
 
   if (title === '' || author === '') {
-    msg.innerHTML = 'Please Fill in Both fields';
+    msg.innerHTML = 'Please Fill In Both Fields';
   } else {
     const book = new Book(title, author, key);
 

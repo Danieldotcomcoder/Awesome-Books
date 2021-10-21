@@ -73,7 +73,7 @@ body {
   margin-top: 2%;
   max-height: 450px;
   overflow: hidden;
- }
+}
 
 .book-list.hide {
   display: none;
@@ -191,7 +191,7 @@ body {
   display: flex;
   align-items: center;
   bottom: 0%;
-  background-color:rgb(104, 193, 248);
+  background-color: rgb(104, 193, 248);
   width: 100%;
   opacity: 0.9;
   height: 50px;

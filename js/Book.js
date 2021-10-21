@@ -41,7 +41,7 @@ class Book {
     const list = document.querySelector('.book-list');
     const row = document.createElement('tr');
     row.innerHTML = `
-      <h2>"${book.title}" &nbsp by  &nbsp ${book.author}</h2>
+      <h2>'${book.title}' &nbsp by  &nbsp ${book.author}</h2>
       <h4 hidden>${book.key}</h4>
       <h2><button class='btn btn-sm delete' id='button'>Remove</button></h2>
     `;
@@ -81,21 +81,21 @@ document.querySelector('.book-list').addEventListener('click', (e) => {
   Book.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
 
-document.getElementById("list").addEventListener('click', (e) => {
+document.getElementById('list').addEventListener('click', () => {
   document.querySelector('.book-list').classList.remove('hide');
   document.querySelector('#book-form').classList.remove('show');
   document.querySelector('#main-h1').classList.remove('hide');
   document.querySelector('.contact-sect').classList.remove('show');
 });
 
-document.getElementById("Add-new").addEventListener('click', (e) => {
+document.getElementById('Add-new').addEventListener('click', () => {
   document.querySelector('.book-list').classList.add('hide');
   document.querySelector('#book-form').classList.add('show');
   document.querySelector('#main-h1').classList.add('hide');
   document.querySelector('.contact-sect').classList.remove('show');
 });
 
-document.getElementById("Contact").addEventListener('click', (e) => {
+document.getElementById('Contact').addEventListener('click', () => {
   document.querySelector('.book-list').classList.add('hide');
   document.querySelector('#book-form').classList.remove('show');
   document.querySelector('#main-h1').classList.add('hide');
@@ -103,9 +103,9 @@ document.getElementById("Contact").addEventListener('click', (e) => {
 });
 
 function time() {
-const { DateTime } = luxon;
-const now = new DateTime.now();
-document.querySelector('.time').innerHTML = now.toLocaleString(DateTime.DATETIME_MED);
-setTimeout(time, 1000);
+  const { DateTime } = luxon;
+  const Now = new DateTime.now();
+  document.querySelector('.time').innerHTML = Now.toLocaleString(DateTime.DATETIME_MED);
+  setTimeout(time, 1000);
 }
 time();

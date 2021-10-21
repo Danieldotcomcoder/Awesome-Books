@@ -13,7 +13,6 @@ body {
 .navbar {
   display: flex;
   flex-direction: row;
-  border: 1px solid blue;
   width: 98%;
   margin-left: 1%;
   margin-top: 1%;
@@ -22,8 +21,8 @@ body {
 .navlist {
   display: flex;
   flex-direction: row;
-  width: 35%;
-  margin-left: 50%;
+  width: 25%;
+  margin-left: 59%;
   justify-content: space-between;
   align-content: center;
   list-style: none;
@@ -34,6 +33,17 @@ body {
   text-decoration: none;
   color: black;
   font-size: 3vh;
+  width: 40%;
+}
+
+#list {
+  padding-right: 35px;
+  border-right: 1px solid blue;
+}
+
+#Add-new {
+  padding-right: 35px;
+  border-right: 1px solid blue;
 }
 
 #main-h1 {
@@ -168,3 +178,13 @@ body {
   margin-left: 2%;
 }
 
+.footer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 0%;
+  background-color:rgb(104, 193, 248);
+  width: 100%;
+  opacity: 0.9;
+  height: 50px;
+}

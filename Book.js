@@ -80,3 +80,30 @@ document.querySelector('.book-list').addEventListener('click', (e) => {
   Book.deleteBookFromDisplay(e.target);
   Book.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
+
+
+
+document.getElementById("list").addEventListener('click', (e) => {
+  document.querySelector('.book-list').classList.remove('hide');
+  document.querySelector('#book-form').classList.remove('show');
+  document.querySelector('#main-h1').classList.remove('hide');
+  document.querySelector('.contact-sect').classList.remove('show');
+
+  });
+
+
+document.getElementById("Add-new").addEventListener('click', (e) => {
+ 
+  document.querySelector('.book-list').classList.add('hide');
+  document.querySelector('#book-form').classList.add('show');
+  document.querySelector('#main-h1').classList.add('hide');
+  document.querySelector('.contact-sect').classList.remove('show');
+  
+});
+
+document.getElementById("Contact").addEventListener('click', (e) => {
+  document.querySelector('.book-list').classList.add('hide');
+  document.querySelector('#book-form').classList.remove('show');
+  document.querySelector('#main-h1').classList.add('hide');
+  document.querySelector('.contact-sect').classList.add('show');
+});

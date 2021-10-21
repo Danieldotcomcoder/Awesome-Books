@@ -81,24 +81,18 @@ document.querySelector('.book-list').addEventListener('click', (e) => {
   Book.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
 
-
-
 document.getElementById("list").addEventListener('click', (e) => {
   document.querySelector('.book-list').classList.remove('hide');
   document.querySelector('#book-form').classList.remove('show');
   document.querySelector('#main-h1').classList.remove('hide');
   document.querySelector('.contact-sect').classList.remove('show');
-
-  });
-
+});
 
 document.getElementById("Add-new").addEventListener('click', (e) => {
- 
   document.querySelector('.book-list').classList.add('hide');
   document.querySelector('#book-form').classList.add('show');
   document.querySelector('#main-h1').classList.add('hide');
   document.querySelector('.contact-sect').classList.remove('show');
-  
 });
 
 document.getElementById("Contact").addEventListener('click', (e) => {
@@ -107,3 +101,11 @@ document.getElementById("Contact").addEventListener('click', (e) => {
   document.querySelector('#main-h1').classList.add('hide');
   document.querySelector('.contact-sect').classList.add('show');
 });
+
+function time() {
+const { DateTime } = luxon;
+const now = new DateTime.now();
+document.querySelector('.time').innerHTML = now.toLocaleString(DateTime.DATETIME_MED);
+setTimeout(time, 1000);
+}
+time();

@@ -8,6 +8,8 @@
 
 body {
   background-image: linear-gradient(to right, rgb(131, 209, 235), rgb(197, 195, 195));
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
@@ -56,6 +58,12 @@ body {
   display: none;
 }
 
+.time {
+  position: absolute;
+  margin-left: 88%;
+  margin-top: 0.5%;
+}
+
 .book-list {
   display: flex;
   flex-direction: column;
@@ -63,12 +71,13 @@ body {
   border: 2px solid rgb(54, 54, 201);
   margin-left: 0.5%;
   margin-top: 2%;
-}
+  max-height: 450px;
+  overflow: hidden;
+ }
 
 .book-list.hide {
   display: none;
 }
-
 
 .book-list tr {
   display: flex;
@@ -78,6 +87,7 @@ body {
   font-size: 2vh;
   align-content: center;
   width: 100%;
+  overflow: hidden;
 }
 
 .book-list tr h2 {
@@ -97,7 +107,6 @@ body {
   margin-top: 3px;
 }
 
-
 #book-form {
   display: none;
 }
@@ -111,7 +120,6 @@ body {
   height: 250px;
   justify-content: space-between;
 }
-
 
 #book-form h2 {
   margin-bottom: 10%;

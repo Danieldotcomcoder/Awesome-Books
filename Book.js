@@ -103,8 +103,8 @@ document.getElementById('Contact').addEventListener('click', () => {
 });
 
 function time() {
-  const { DateTime } = luxon;    // eslint-disable-line
-  const now = new DateTime.now();// eslint-disable-line
+  const {DateTime} = luxon;
+  const now = new DateTime.now();
   document.querySelector('.time').innerHTML = now.toLocaleString(DateTime.DATETIME_MED);
   setTimeout(time, 1000);
 }

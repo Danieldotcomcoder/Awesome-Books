@@ -3,16 +3,65 @@
 * {
   margin: 0;
   padding: 0;
-  list-style: none;
   font-family: 'Bitter', serif;
 }
 
 body {
   background-image: linear-gradient(to right, rgb(131, 209, 235), rgb(197, 195, 195));
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+.navlist {
+  display: flex;
+  flex-direction: row;
+  width: 25%;
+  margin-left: 59%;
+  justify-content: space-between;
+  align-content: center;
+  list-style: none;
+}
+
+.navlist li a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-size: 3vh;
+  width: 40%;
+}
+
+#list {
+  padding-right: 35px;
+  border-right: 1px solid blue;
+}
+
+#Add-new {
+  padding-right: 35px;
+  border-right: 1px solid blue;
 }
 
 #main-h1 {
+  display: flex;
   margin-left: 37%;
+  margin-top: 2%;
+}
+
+#main-h1.hide {
+  display: none;
+}
+
+.time {
+  position: absolute;
+  margin-left: 88%;
+  margin-top: 0.5%;
 }
 
 .book-list {
@@ -21,6 +70,13 @@ body {
   width: 99%;
   border: 2px solid rgb(54, 54, 201);
   margin-left: 0.5%;
+  margin-top: 2%;
+  max-height: 450px;
+  overflow: hidden;
+}
+
+.book-list.hide {
+  display: none;
 }
 
 .book-list tr {
@@ -31,6 +87,7 @@ body {
   font-size: 2vh;
   align-content: center;
   width: 100%;
+  overflow: hidden;
 }
 
 .book-list tr h2 {
@@ -51,33 +108,35 @@ body {
 }
 
 #book-form {
+  display: none;
+}
+
+#book-form.show {
   display: flex;
   flex-direction: column;
-  margin-top: 1%;
+  margin-top: 8%;
   margin-left: 35%;
   width: 25%;
-  height: 180px;
+  height: 250px;
   justify-content: space-between;
 }
 
 #book-form h2 {
+  margin-bottom: 10%;
   margin-left: 20%;
-}
-
-#book-form hr {
-  border: 1px solid cornflowerblue;
+  font-size: 4vh;
 }
 
 #title {
   width: 99%;
-  height: 25px;
+  height: 35px;
   border: 2px solid springgreen;
   box-shadow: 3px 3px 3px rgb(141, 252, 141);
 }
 
 #author {
   width: 99%;
-  height: 25px;
+  height: 35px;
   border: 2px solid springgreen;
   box-shadow: 3px 3px 3px rgb(141, 252, 141);
 }
@@ -93,6 +152,47 @@ body {
 
 #error-msg {
   display: flex;
-  width: 18%;
-  margin-left: 35%;
+  width: 70%;
+  margin-top: 5%;
+}
+
+.contact-sect {
+  display: none;
+}
+
+.contact-sect.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-sect h1 {
+  position: relative;
+  margin-left: 30%;
+  margin-top: 5%;
+  font-size: 8vh;
+}
+
+.contact-msg {
+  position: relative;
+  margin-top: 4%;
+  margin-left: 30%;
+}
+
+.contact-msg li {
+  position: relative;
+  margin-top: 2%;
+  font-size: 2.5vh;
+  margin-left: 2%;
+}
+
+.footer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 0%;
+  background-color: rgb(104, 193, 248);
+  width: 100%;
+  opacity: 0.9;
+  height: 50px;
 }

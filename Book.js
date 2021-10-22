@@ -103,9 +103,8 @@ document.getElementById('Contact').addEventListener('click', () => {
 });
 
 function time() {
-  /* luxon is a cdn imported  library */
-  /* eslint-disable no-undef */
-  const { DateTime } = luxon;
+  const lux = window.luxon;
+  const { DateTime } = lux;
   const today = DateTime.now();
   document.querySelector('.time').innerHTML = today.toLocaleString(DateTime.DATETIME_MED);
   setTimeout(time, 1000);
